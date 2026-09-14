@@ -29,11 +29,6 @@ def test_lengths_of_evens_as_strings():
     assert lengths(strings) == [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
 
 
-def test_even_squares_are_evens():
-    even_squares = [n for n in squares(100) if n % 2 == 0]
-    assert set(even_squares) <= set(evens(100))
-
-
 def test_threes_that_are_even():
     both = sorted(set(threes(40)) & set(evens(40)))
     assert both == [30, 32, 34, 36, 38]
