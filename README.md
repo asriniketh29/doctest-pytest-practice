@@ -1,5 +1,4 @@
-# More doctest practice [![](https://github.com/asriniketh29/functional-python/workflows/tests/badge.svg)](https://github.com/asriniketh29/functional-python/actions?query=workflow%3Atests)
-
+# More doctest practice [![tests](https://github.com/asriniketh29/doctest-pytest-practice/actions/workflows/tests.yml/badge.svg)](https://github.com/asriniketh29/doctest-pytest-practice/actions/workflows/tests.yml)
 The purpose of this assignment is to help develop good coding habits.
 
 
