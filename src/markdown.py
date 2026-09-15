@@ -100,15 +100,15 @@ def compile_links(line):
     'Click on the <a href="https://github.com/mikeizbicki/cmc-csci040">course webpage</a>!'
     >>> compile_links('[course webpage]'
     ... '(https://github.com/mikeizbicki/cmc-csci040)'
-    ... )
+    ... ) # noqa: E501
     '<a href="https://github.com/mikeizbicki/cmc-csci040">course webpage</a>'
     >>> compile_links('this is wrong: [course webpage]'
     ... '(https://github.com/mikeizbicki/cmc-csci040)'
-    ... )
+    ... ) # noqa: E501
     'this is wrong: <a href="https://github.com/mikeizbicki/cmc-csci040">course webpage</a>'
     >>> compile_links('this is wrong: [course webpage]'
     ... '(https://github.com/mikeizbicki/cmc-csci040'
-    ... )
+    ... ) # noqa: E501
     'this is wrong: [course webpage](https://github.com/mikeizbicki/cmc-csci040'
     >>> compile_links('[a](1) and [b](2)')
     '<a href="1">a</a> and <a href="2">b</a>'
