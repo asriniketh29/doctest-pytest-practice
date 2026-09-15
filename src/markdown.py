@@ -102,10 +102,14 @@ def compile_links(line):
     >>> compile_links('[course webpage](https://github.com
     /mikeizbicki/cmc-csci040)')
     '<a href="https://github.com/mikeizbicki/cmc-csci040">course webpage</a>'
-    >>> compile_links('this is wrong: [course webpage]    (https://github.com/mikeizbicki/cmc-csci040)')
-    'this is wrong: [course webpage]    (https://github.com/mikeizbicki/cmc-csci040)'
-    >>> compile_links('this is wrong: [course webpage](https://github.com/mikeizbicki/cmc-csci040')
-    'this is wrong: [course webpage](https://github.com/mikeizbicki/cmc-csci040'
+    >>> compile_links('this is wrong: [course webpage]
+    (https://github.com/mikeizbicki/cmc-csci040)')
+    'this is wrong: [course webpage]
+    (https://github.com/mikeizbicki/cmc-csci040)'
+    >>> compile_links('this is wrong: [course webpage]
+    (https://github.com/mikeizbicki/cmc-csci040')
+    'this is wrong: [course webpage]
+    (https://github.com/mikeizbicki/cmc-csci040'
     >>> compile_links('[a](1) and [b](2)')
     '<a href="1">a</a> and <a href="2">b</a>'
     >>> compile_links('(parens) then [t](u)')
