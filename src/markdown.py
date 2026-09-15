@@ -3,6 +3,7 @@ All the functions in this file convert markdown syntax into html.
 Implementing these functions will give you practice learning the correct markdown syntax.
 '''
 
+
 def compile_italic_underscore(line):
     '''
     Convert "_italic_" into "<i>italic</i>".
@@ -34,12 +35,13 @@ def compile_italic_underscore(line):
         end = line.find("_", start + 1)
         if end == -1:
             break
-        
+
         # Replace only the matched _text_ pair
         content = line[start + 1:end]
         line = line[:start] + f"<i>{content}</i>" + line[end + 1:]
-        
+
     return line
+
 
 def compile_bold_stars(line):
     '''
@@ -108,28 +110,26 @@ def compile_links(line):
         start_bracket = line.find("[")
         if start_bracket == -1:
             break
-            
+
         end_bracket = line.find("]", start_bracket + 1)
         if end_bracket == -1:
             break
-            
+
         # Ensure '(' immediately follows ']'
         if end_bracket + 1 >= len(line) or line[end_bracket + 1] != "(":
             # Skip invalid link structures (e.g., spaces between ] and ()
-            line = line[:start_bracket] + "TEMP_LBRACK" + line[start_bracket + 1:]
+            line = line[:start_bracket] + \
+                "TEMP_LBRACK" + line[start_bracket + 1:]
             continue
-            
+
         end_paren = line.find(")", end_bracket + 2)
         if end_paren == -1:
             break
 
         text = line[start_bracket + 1:end_bracket]
         url = line[end_bracket + 2:end_paren]
-        
+
         link_html = f'<a href="{url}">{text}</a>'
         line = line[:start_bracket] + link_html + line[end_paren + 1:]
 
     return line.replace("TEMP_LBRACK", "[")
-
-
-
